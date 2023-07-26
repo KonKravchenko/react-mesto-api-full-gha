@@ -1,0 +1,16 @@
+.sign {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 29px 0 0;
+  justify-content: center;
+  column-gap: 1%;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+}

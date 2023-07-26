@@ -1,0 +1,9 @@
+.form__item_black {
+  display: flex;
+  background: black;
+  color: white;
+  border-bottom: 2px solid #CCCCCC;
+  margin: 0;
+  padding: 13px 0;
+
+}

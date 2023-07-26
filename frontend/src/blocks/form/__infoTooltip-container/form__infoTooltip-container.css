@@ -1,0 +1,7 @@
+.form__infoTooltip-container {
+  display: grid;
+  justify-items: center;
+  margin: 0;
+  padding: 60px 36px;
+  row-gap: 24px;
+}

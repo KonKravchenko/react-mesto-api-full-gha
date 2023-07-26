@@ -1,0 +1,102 @@
+@import url(./vendor/normalize.css);
+@import url(./blocks/hidden/hidden.css);
+
+/*--Шрифты--*/
+@import url(./vendor/fonts/font.css);
+
+/*--Страница--*/
+@import url(./blocks/page/page.css);
+
+/*--Шапка--*/
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+
+/*--Меню--*/
+@import url(./blocks/menu/menu.css);
+@import url(./blocks/menu/__link/menu__link.css);
+@import url(./blocks/menu/__container/menu__container.css);
+@import url(./blocks/menu/__item/menu__item.css);
+@import url(./blocks/menu/__button/menu__button.css);
+
+
+/*--Основной контент--*/
+@import url(./blocks/content/content.css);
+
+/*--Профиль--*/
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__about/profile__about.css);
+@import url(./blocks/profile/__edit-button/profile__edit-button.css);
+@import url(./blocks/profile/__add-button/profile__add-button.css);
+@import url(./blocks/profile/__rotor/profile__rotor.css);
+@import url(./blocks/avatar/avatar.css);
+@import url(./blocks/avatar/__image/avatar__image.css);
+@import url(./blocks/avatar/__edit-button/avatar__edit-button.css);
+@import url(./blocks/avatar/__overlay/avatar__overlay.css);
+
+
+/*--Элементы--*/
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/element/element.css);
+@import url(./blocks/elements/__list/elements__list.css);
+@import url(./blocks/element/__like-group/element__like-group.css);
+@import url(./blocks/element/__like/element__like.css);
+@import url(./blocks/element/__like/_active/element__like_active.css);
+@import url(./blocks/element/__like/_disabled/element__like_disabled.css);
+@import url(./blocks/element/__like-number/element__like-number.css);
+@import url(./blocks/element/__title/element__title.css);
+@import url(./blocks/element/__group/element__group.css);
+@import url(./blocks/element/__image/element__image.css);
+@import url(./blocks/element/__trash/element__trash.css);
+
+/*--Попап--*/
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_card/popup_card.css);
+@import url(./blocks/popup/_profile/popup_profile.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__close/popup__close.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/_big-image/popup_big-image.css);
+@import url(./blocks/popup/__big-image-container/popup__big-image-container.css);
+@import url(./blocks/popup/__big-image-image/popup__big-image-image.css);
+@import url(./blocks/popup/__big-image-title/popup__big-imag-title.css);
+@import url(./blocks/popup/_avatar/popup_avatar.css);
+@import url(./blocks/popup/_confirm/popup_confirm.css);
+@import url(./blocks/popup/_infoTooltip/popup_infoTooltip.css);
+
+/*--Форма--*/
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__infoTooltip/form__infoTooltip.css);
+@import url(./blocks/form/__title/form__title.css);
+@import url(./blocks/form/__title/_tooltip/form__title_tooltip.css);
+@import url(./blocks/form/__input-container/form__input-container.css);
+@import url(./blocks/form/__item/form__item.css);
+@import url(./blocks/form/__item/_bottom/form__item_bottom.css);
+@import url(./blocks/form/__button/form__button.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/_black/form_black.css);
+@import url(./blocks/form/__title/_black/form__title_black.css);
+@import url(./blocks/form/__input-container/_black/form__input-container_black.css);
+@import url(./blocks/form/__item/_black/form__item_black.css);
+@import url(./blocks/form/__button/_white/form__button_white.css);
+@import url(./blocks/form/__image/form__image.css);
+@import url(./blocks/form/__infoTooltip-container/form__infoTooltip-container.css);
+
+/*--Форма регистрации и авторизации--*/
+@import url(./blocks/authForm/authForm.css);
+@import url(./blocks/register/register.css);
+
+@import url(./blocks/sign/sign.css);
+@import url(./blocks/sign/__text/sign__text.css);
+@import url(./blocks/sign/__link/sign__link.css);
+@import url(./blocks/login/login.css);
+
+/*--Подвал--*/
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__text/footer__text.css);
+
+@import url(./blocks/error-border/error-border.css);
+@import url(./blocks/form/__item-error/form__item-error.css);
+@import url(./blocks/form/__item-error/_visible/form__item-error_visible.css);
+@import url(./blocks/form/__button/_disabled/form__button_disabled.css);

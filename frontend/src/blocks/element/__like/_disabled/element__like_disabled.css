@@ -1,0 +1,9 @@
+.element__like_disabled {
+  background-image: url(../../../../images/__like_disabled.png);
+}
+
+.element__like_disabled:active {
+  background-image: url(../../../../images/__like_active.png);
+}
+
+

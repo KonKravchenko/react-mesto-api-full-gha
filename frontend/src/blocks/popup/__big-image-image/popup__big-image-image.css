@@ -1,0 +1,10 @@
+.popup__big-image-image {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  max-width: min(75vw, 816px);
+  max-height: min(75vh, 540px);
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+  z-index: 2;
+}

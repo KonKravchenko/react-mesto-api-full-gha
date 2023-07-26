@@ -1,0 +1,24 @@
+.profile__rotor {
+  display: grid;
+  flex-direction: column;
+  align-self: center;
+  align-items: baseline;
+  row-gap: 14px;
+  column-gap: 18px;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  max-width: 294px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 597px) {
+  .profile__rotor {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .profile__rotor {
+    column-gap: 10px;
+  }
+}

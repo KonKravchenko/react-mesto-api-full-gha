@@ -1,0 +1,14 @@
+.header__logo {
+  max-width: 142px;
+  max-height: 33px;
+  box-sizing: border-box;
+  object-fit: cover;
+  grid-column: 1/2
+}
+
+@media screen and (max-width: 388px) {
+  .header__logo {
+    max-width: 103.74px;
+    max-height: 24.4px;
+  }
+}

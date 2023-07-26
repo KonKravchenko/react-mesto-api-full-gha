@@ -1,0 +1,11 @@
+.menu__link {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.menu__link:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

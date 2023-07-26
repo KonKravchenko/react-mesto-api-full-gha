@@ -1,0 +1,15 @@
+.footer {
+  margin: 0;
+  padding: 0 0 36px;
+  grid-area: footer;
+  display: flex;
+  justify-items: flex-start;
+  max-width: 880px;
+  color: rgba(84, 84, 84, 1);
+}
+
+@media screen and (max-width: 897px) {
+  .footer {
+    padding: 0 19px 36px;
+  }
+}

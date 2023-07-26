@@ -1,0 +1,12 @@
+.menu {
+  grid-column: 2/3;
+  position: relative;
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  text-decoration: none;
+}

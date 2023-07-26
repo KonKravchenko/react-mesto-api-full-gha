@@ -1,0 +1,9 @@
+.avatar__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background 0.5s ease;
+  border-radius: 100px;
+}

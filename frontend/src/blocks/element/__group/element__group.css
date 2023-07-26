@@ -1,0 +1,12 @@
+.element__group {
+  margin: 0;
+  padding: 22px 15px 22px 21px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border: none;
+  max-width: 282px;
+  height: 26%;
+}

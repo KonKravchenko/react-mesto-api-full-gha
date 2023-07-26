@@ -1,0 +1,17 @@
+.element {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: min(100vw, 282px);
+  height: min(100vh, 361px);
+  border-radius: 10px;
+  list-style: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  color: black;
+  background-color: white;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  border: none;
+}

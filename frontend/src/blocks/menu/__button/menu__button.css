@@ -1,0 +1,15 @@
+.menu__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  min-width: 56px;
+  min-height: 22px;
+  color: rgba(169, 169, 169, 1);
+
+}
+
+.menu__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

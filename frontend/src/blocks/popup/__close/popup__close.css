@@ -1,0 +1,27 @@
+.popup__close {
+  margin: 0;
+  padding: 0;
+  min-width: 32px;
+  min-height: 32px;
+  background-image: url(../../../images/__popup_close.png);
+  background-color: rgba(0, 0, 0, 0);
+  background-size: cover;
+  border-style: none;
+  justify-self: end;
+  display: grid;
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.popup__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 597px) {
+  .popup__close {
+    grid-column: 1/2;
+    min-width: 20px;
+    min-height: 20px;
+  }
+}

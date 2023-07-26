@@ -1,0 +1,27 @@
+.header {
+  grid-area: header;
+  margin: 0;
+  padding: 45px 0 41px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  max-width: 880px;
+
+  display: grid;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  /* grid-template-rows: repeat(2, minmax(min-content, max-content)); */
+}
+
+@media screen and (max-width: 897px) {
+  .header {
+    padding: 28px 27px 41px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    padding: 28px 27px 31.6px;
+  }
+}

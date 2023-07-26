@@ -1,0 +1,22 @@
+.popup__container {
+  position: absolute;
+  top: 155px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  color: black;
+  box-sizing: border-box;
+  gap: 8px;
+  justify-self: center;
+  translate: 20px;
+}
+
+@media screen and (max-width: 597px) {
+  .popup__container {
+    grid-template-columns: minmax(min-content, max-content);
+    grid-template-rows: minmax(min-content, max-content);
+    gap: 16px;
+    top: 87px;
+    translate: 0px;
+  }
+}
