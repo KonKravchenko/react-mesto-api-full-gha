@@ -9,14 +9,14 @@ const ConflictingRequestError = require('../errors/conflicting-request-err');
 
 const SALT_ROUNDS = 10;
 
-const JWT_SECRET = 'somethingverysecret';
+// const JWT_SECRET = 'somethingverysecret';
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const logout = (req, res, next) => {
   const { email } = req.body;
-  console.log(req);
   User.findOne({ email })
     .then((user) => {
-      const token = jwt.sign({ id: user._id }, JWT_SECRET);
+      const token = jwt.sign({ id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
       res
         .cookie('jwt', token, {
           maxAge: 0,
