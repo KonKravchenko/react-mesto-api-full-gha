@@ -14,13 +14,14 @@ const app = express();
 const router = require('./routes');
 const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-require('dotenv').config();
+const { SERVER_PORT, DB } = require('./utils/config');
+// require('dotenv').config();
 
-console.log(process.env.NODE_ENV); // production
+// console.log(process.env.NODE_ENV); // production
 
 app.use(cors);
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+mongoose.connect(DB);
 // mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use(bodyParser.json());
@@ -37,6 +38,6 @@ app.use(errors()); // обработчик ошибок celebrate
 
 app.use(errorHandler);
 
-app.listen(3000, () => {
+app.listen(SERVER_PORT, () => {
   console.log('Сервер запущен!');
 });
