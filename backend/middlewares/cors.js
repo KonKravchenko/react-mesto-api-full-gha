@@ -1,5 +1,5 @@
 const allowedCors = [
-  'https://localhost:3000/',
+  'https://konkravchenko.nomoreparties.sbs',
   'http://localhost:3000',
   'http://localhost:3000/main',
   'localhost:3000',
