@@ -36,7 +36,7 @@ router.post('/api/logout', logout);
 router.use(auth);
 router.use('/api/users', userRoutes);
 router.use('/api/cards', cardRoutes);
-router.use('*', (req, res, next) => {
+router.use('/api/*', (req, res, next) => {
   throw new NotFoundError('Неверный путь');
 });
 
