@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const allowedCors = [
   'https://konkravchenko.nomoreparties.sbs',
   'https://konkravchenko.nomoreparties.sbs/',
