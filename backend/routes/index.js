@@ -10,7 +10,7 @@ const {
   login, createUser, logout,
 } = require('../controllers/users');
 
-router.post('/signup', celebrate({
+router.post('/api/signup', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
@@ -20,7 +20,7 @@ router.post('/signup', celebrate({
   })
     .unknown(true),
 }), createUser);
-router.post('/signin', celebrate({
+router.post('/api/signin', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
@@ -31,11 +31,11 @@ router.post('/signin', celebrate({
     .unknown(true),
 }), login);
 
-router.post('/logout', logout);
+router.post('/api/logout', logout);
 
 router.use(auth);
-router.use('/users', userRoutes);
-router.use('/cards', cardRoutes);
+router.use('/api/users', userRoutes);
+router.use('/api/cards', cardRoutes);
 router.use('*', (req, res, next) => {
   throw new NotFoundError('Неверный путь');
 });
