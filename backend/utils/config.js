@@ -1,10 +1,10 @@
+/* eslint-disable */
 require('dotenv').config();
 
 //  забираем нужные переменные из .env
 //  в случае если файла .env нет или их там нет
 //  то все они будут undefined
-const { NODE_ENV, JWT_SECRET, DB_HOST, PORT,
-  SECRET } = process.env;
+const { NODE_ENV, JWT_SECRET, DB_HOST, PORT, SECRET } = process.env;
 
 //  задаем переменные с дефолтными (dev) значениями
 const DEV_SECRET = 'SECRETSECRETSECRET';
