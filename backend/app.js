@@ -20,7 +20,8 @@ console.log(process.env.NODE_ENV); // production
 
 app.use(cors);
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+// mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
