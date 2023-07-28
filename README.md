@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.54.255
 
-Frontend https://...
+Frontend https://konkravchenko.nomoreparties.sbs
 
-Backend https://...
+Backend https://api.konkravchenko.nomoreparties.sbs

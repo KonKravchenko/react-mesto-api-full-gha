@@ -98,7 +98,7 @@ class Api {
 // });
 
 export const api = new Api({
-  url: 'http://localhost:3001',
+  url: 'https://api.konkravchenko.nomoreparties.sbs',
   headers: {
     // 'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json',

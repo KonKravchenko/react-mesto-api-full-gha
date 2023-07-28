@@ -1,3 +1,5 @@
+// konkravchenko.nomoreparties.sbs
+// api.konkravchenko.nomoreparties.sbs
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -34,6 +36,6 @@ app.use(errors()); // обработчик ошибок celebrate
 
 app.use(errorHandler);
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log('Сервер запущен!');
 });
