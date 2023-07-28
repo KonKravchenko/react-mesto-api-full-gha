@@ -11,7 +11,7 @@ function NavBar({ isActive, navBarLog, navBarReg, loggedIn, setLoggedIn, loggedO
   function signOut() {
     setLoggedIn(false)
     loggedOut()
-    history('/react-mesto-auth/sign-in');
+    history('/sign-in');
     
   }
 
@@ -22,9 +22,9 @@ function NavBar({ isActive, navBarLog, navBarReg, loggedIn, setLoggedIn, loggedO
 
     <nav className="menu">
       {isActive ? (
-        !loggedIn && <NavLink to="/react-mesto-auth/sign-in" className="menu__link" onClick={navBarReg}>Войти</NavLink>
+        !loggedIn && <NavLink to="/sign-in" className="menu__link" onClick={navBarReg}>Войти</NavLink>
       ) : (
-        !loggedIn && < NavLink to="/react-mesto-auth/sign-up" className="menu__link" onClick={navBarLog}>Регистрация</NavLink>
+        !loggedIn && < NavLink to="/sign-up" className="menu__link" onClick={navBarLog}>Регистрация</NavLink>
       )}
       {loggedIn &&
         <div className="menu__container">

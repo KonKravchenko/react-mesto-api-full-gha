@@ -43,9 +43,7 @@ function Main({
         </div>
 
         <button className="profile__add-button" aria-label="добавить" type="button"
-          onClick={onAddPlace}
-
-        ></button>
+          onClick={onAddPlace}></button>
 
       </section>
 

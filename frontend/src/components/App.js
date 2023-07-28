@@ -237,7 +237,7 @@ function App() {
           <Routes>
 
             <Route path="/*" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
-            <Route path="/react-mesto-auth" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
+            <Route path="/" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
 
             <Route path="/sign-up" element={<Register
               handleRegister={handleRegister}

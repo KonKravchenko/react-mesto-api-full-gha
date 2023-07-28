@@ -1,9 +1,9 @@
 const allowedCors = [
   'https://konkravchenko.nomoreparties.sbs',
-  'https://localhost:3000',
-  'http://localhost:3000',
-  'http://localhost:3000/main',
-  'localhost:3000',
+  // 'https://localhost:3000',
+  // 'http://localhost:3000',
+  // 'http://localhost:3000/main',
+  // 'localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
