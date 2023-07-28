@@ -5,12 +5,12 @@ import { useForm } from '../hooks/useForm'
 export const AuthForm = ({ handle, formValue, name, title, buttonText, btnAriaLabel, navBar }) => {
 
   const { values, handleChange } = useForm(formValue)
-  React.useEffect(()=>{
-    navBar() 
+  React.useEffect(() => {
+    navBar()
   })
- 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  function handleSubmit(event) {
+    event.preventDefault();
     if (!values.email || !values.password) {
       return;
     }
