@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
-// export const BASE_URL = 'http://localhost:3000';
+// export const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
+export const BASE_URL = 'http://localhost:3000';
 
 const _checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка auth: ${res.status} ${res.statusText}`)
