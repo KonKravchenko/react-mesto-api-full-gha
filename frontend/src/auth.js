@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
+export const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs/api';
 // export const BASE_URL = 'http://localhost:3000';
 
 const _checkResponse = (res) => {
