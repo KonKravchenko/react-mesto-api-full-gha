@@ -187,12 +187,12 @@ function App() {
       })
   }
 
-  function handleIn() {
-    setIsLoading(true)
-    handleApi()
-    navigate("/main", { replace: true })
-    setLoggedIn(true);
-  }
+  // function handleIn() {
+  //   setIsLoading(true)
+  //   handleApi()
+  //   navigate("/main", { replace: true })
+  //   setLoggedIn(true);
+  // }
 
   // React.useEffect(() => {
   //   handleIn()
