@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес <ipv4> 158.160.54.255
+IP-адрес <158.160.54.255> 
 
 Frontend https://konkravchenko.nomoreparties.sbs
 
