@@ -1,14 +1,13 @@
-/* eslint-disable */
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const userRoutes = require('./users');
 const cardRoutes = require('./cards');
 const NotFoundError = require('../errors/not-found-err');
 const auth = require('../middlewares/auth');
-const { linkValid } = require('../utils/constants')
+const { linkValid } = require('../utils/constants');
 
 const {
-  login, createUser, logout
+  login, createUser, logout,
 } = require('../controllers/users');
 
 router.post('/signup', celebrate({
@@ -32,7 +31,7 @@ router.post('/signin', celebrate({
     .unknown(true),
 }), login);
 
-router.post('/logout', logout)
+router.post('/logout', logout);
 
 router.use(auth);
 router.use('/users', userRoutes);
