@@ -174,11 +174,13 @@ function App() {
     event.preventDefault()
     auth.authorize(formValue)
       .then((data) => {
+        console.log(data)
         setIsLoading(true)
         handleApi()
         setFormValue({ password: '', email: '' });
         setLoggedIn(true);
         navigate("/main", { replace: true })
+       
       })
       .catch((err) => {
         setInfoTooltipData(err)
@@ -187,16 +189,16 @@ function App() {
       })
   }
 
-  // function handleIn() {
-  //   setIsLoading(true)
-  //   handleApi()
-  //   navigate("/main", { replace: true })
-  //   setLoggedIn(true);
-  // }
+  function handleIn() {
+    setIsLoading(true)
+    handleApi()
+    navigate("/main", { replace: true })
+    setLoggedIn(true);
+  }
 
-  // React.useEffect(() => {
-  //   handleIn()
-  // }, [])
+  React.useEffect(() => {
+    handleIn()
+  }, [])
 
   function handleLogout() {
 
