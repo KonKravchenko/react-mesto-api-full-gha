@@ -1,6 +1,7 @@
 const allowedCors = [
   'https://konkravchenko.nomoreparties.sbs',
   'https://konkravchenko.nomoreparties.sbs/',
+  'https://konkravchenko.nomoreparties.sbs/api',
   'https://localhost:3000/',
   'http://localhost:3000',
   // 'http://localhost:3000/main',
