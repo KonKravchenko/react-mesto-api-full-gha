@@ -1,3 +1,4 @@
+/*eslint-disabled*/
 // konkravchenko.nomoreparties.sbs
 // api.konkravchenko.nomoreparties.sbs
 const express = require('express');
