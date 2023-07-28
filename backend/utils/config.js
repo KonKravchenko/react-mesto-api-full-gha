@@ -8,7 +8,7 @@ const { NODE_ENV, JWT_SECRET, DB_HOST, PORT, SECRET } = process.env;
 
 //  задаем переменные с дефолтными (dev) значениями
 const DEV_SECRET = 'SECRETSECRETSECRET';
-const DEV_DB_HOST = 'mongodb://localhost:27017/mydatabase';
+const DEV_DB_HOST = 'mongodb://localhost:27017/mestoDB';
 const DEV_PORT = 3000;
 
 //  далее задаем переменные которые уже пойдут наружу

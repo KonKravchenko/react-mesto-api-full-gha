@@ -21,6 +21,7 @@ router.post('/signup', celebrate({
   })
     .unknown(true),
 }), createUser);
+
 router.post('/signin', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
