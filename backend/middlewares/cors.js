@@ -1,8 +1,8 @@
 const allowedCors = [
   'https://konkravchenko.nomoreparties.sbs',
   'https://konkravchenko.nomoreparties.sbs/',
-  // 'https://localhost:3000',
-  // 'http://localhost:3000',
+  'https://localhost:3000',
+  'http://localhost:3000',
   // 'http://localhost:3000/main',
   // 'localhost:3000',
 ];
@@ -10,11 +10,11 @@ const allowedCors = [
 module.exports = (req, res, next) => {
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
   // проверяем, что источник запроса есть среди разрешённых
-  // if (allowedCors.includes(origin)) {
-  // устанавливаем заголовок, который разрешает браузеру запросы с этого источника
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Credentials', true);
-  // }
+  if (allowedCors.includes(origin)) {
+    // устанавливаем заголовок, который разрешает браузеру запросы с этого источника
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', true);
+  }
 
   const { method } = req; // Сохраняем тип запроса (HTTP-метод) в соответствующую переменную
 
