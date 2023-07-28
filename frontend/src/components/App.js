@@ -177,7 +177,7 @@ function App() {
         handleApi()
         setFormValue({ password: '', email: '' });
         setLoggedIn(true);
-        navigate("/react-mesto-auth/main", { replace: true })
+        navigate("/main", { replace: true })
       })
       .catch((err) => {
         setInfoTooltipData(err)
@@ -189,7 +189,7 @@ function App() {
   function handleIn() {
     setIsLoading(true)
     handleApi()
-    navigate("/react-mesto-auth/main", { replace: true })
+    navigate("/main", { replace: true })
     setLoggedIn(true);
   }
 
@@ -236,22 +236,22 @@ function App() {
 
           <Routes>
 
-            <Route path="/*" element={loggedIn ? <Navigate to="/react-mesto-auth/main" replace /> : <Navigate to="/react-mesto-auth/sign-in" replace />} />
-            <Route path="/react-mesto-auth" element={loggedIn ? <Navigate to="/react-mesto-auth/main" replace /> : <Navigate to="/react-mesto-auth/sign-in" replace />} />
+            <Route path="/*" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
+            <Route path="/react-mesto-auth" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
 
-            <Route path="/react-mesto-auth/sign-up" element={<Register
+            <Route path="/sign-up" element={<Register
               handleRegister={handleRegister}
               navBarLog={handleNavBarLogin}
               formValue={formValue}
               setFormValue={setFormValue}
             />} />
-            <Route path="/react-mesto-auth/sign-in" element={<Login
+            <Route path="/sign-in" element={<Login
               handleLogin={handleLogin}
               navBarReg={handleNavBarReg}
               formValue={formValue}
               setFormValue={setFormValue} />} />
 
-            <Route path="/react-mesto-auth/main" element={<ProtectedRouteElement isLoading={isLoading} element={Main}
+            <Route path="/main" element={<ProtectedRouteElement isLoading={isLoading} element={Main}
               onEditAvatar={handleEditAvatarClick}
               onEditProfile={handleEditProfileClick}
               onAddPlace={handleAddPlaceClick}
