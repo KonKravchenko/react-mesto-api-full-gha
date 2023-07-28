@@ -194,9 +194,9 @@ function App() {
     setLoggedIn(true);
   }
 
-  React.useEffect(() => {
-    handleIn()
-  }, [])
+  // React.useEffect(() => {
+  //   handleIn()
+  // }, [])
 
   function handleLogout() {
 
