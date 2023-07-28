@@ -170,7 +170,8 @@ function App() {
 
 
   // Новый логин
-  function handleLogin(formValue) {
+  function handleLogin(formValue, event) {
+    event.preventDefault()
     auth.authorize(formValue)
       .then((data) => {
         setIsLoading(true)
