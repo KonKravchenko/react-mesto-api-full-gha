@@ -1,9 +1,10 @@
 /* eslint-disable */
 
 const allowedCors = [
-  'https://konkravchenko.nomoreparties.sbs/*',
-  'https://konkravchenko.nomoreparties.sbs/',
   'https://konkravchenko.nomoreparties.sbs',
+  'https://konkravchenko.nomoreparties.sbs/sign-in',
+  'https://konkravchenko.nomoreparties.sbs/sign-up',
+  'https://konkravchenko.nomoreparties.sbs/main',
 ];
 
 module.exports = (req, res, next) => {
