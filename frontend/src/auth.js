@@ -21,13 +21,13 @@ export const register = ({ password, email }) => {
 export const authorize = ({ password, email }) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
-    credentials: 'include',
+    credentials: 'include',// теперь куки посылаются вместе с запросом
     headers: {
       "Accept":"application/json",
       'Content-Type': 'application/json',
-      // 'Access-Control-Allow-Credentials': 'true'
+      'Access-Control-Allow-Credentials': 'true'
     },
-     // теперь куки посылаются вместе с запросом
+     
     body: JSON.stringify({ password, email })
   })
     .then(res => _checkResponse(res))
