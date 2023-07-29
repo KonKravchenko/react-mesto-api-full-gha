@@ -1,4 +1,5 @@
-const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs/api';
+const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
+// const BASE_URL = 'http://localhost:3001'
 
 const _checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка auth: ${res.status} ${res.statusText}`)
@@ -21,11 +22,11 @@ export const register = ({ password, email }) => {
 export const authorize = ({ password, email }) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
-    // credentials: 'include',// теперь куки посылаются вместе с запросом
+    credentials: 'include',// теперь куки посылаются вместе с запросом
     headers: {
       "Accept":"application/json",
       'Content-Type': 'application/json',
-      // 'Access-Control-Allow-Credentials': 'true'
+      'Access-Control-Allow-Credentials': 'true'
     },
      
     body: JSON.stringify({ password, email })

@@ -5,10 +5,10 @@ const userRoutes = require('./users');
 const cardRoutes = require('./cards');
 const NotFoundError = require('../errors/not-found-err');
 const auth = require('../middlewares/auth');
-const { linkValid } = require('../utils/constants');
+const { linkValid } = require('../utils/constants')
 
 const {
-  login, createUser, logout,
+  login, createUser, logout
 } = require('../controllers/users');
 
 router.post('/signup', celebrate({
@@ -21,7 +21,6 @@ router.post('/signup', celebrate({
   })
     .unknown(true),
 }), createUser);
-
 router.post('/signin', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
@@ -33,9 +32,7 @@ router.post('/signin', celebrate({
     .unknown(true),
 }), login);
 
-router.post('/logout', logout);
-
-
+router.post('/logout', logout)
 
 router.use(auth);
 router.use('/users', userRoutes);

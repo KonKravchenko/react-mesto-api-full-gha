@@ -5,6 +5,7 @@ const NotFoundError = require('../errors/not-found-err');
 module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
   const owner = { _id: req.user.id };
+  console.log(owner)
   Card.create({ name, link, owner })
     .then((card) => {
       res
@@ -46,6 +47,8 @@ module.exports.deleteCard = (req, res, next) => {
 };
 
 module.exports.likeCard = (req, res, next) => {
+  console.log(req.user)
+  console.log(req.params)
   Card.findByIdAndUpdate(
     req.params.id,
     { $addToSet: { likes: req.user.id } },
@@ -62,6 +65,8 @@ module.exports.likeCard = (req, res, next) => {
 };
 
 module.exports.dislikeCard = (req, res, next) => {
+  console.log(req.user)
+  console.log(req.params)
   Card.findByIdAndUpdate(
     req.params.id,
     { $pull: { likes: req.user.id } },
