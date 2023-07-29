@@ -8,7 +8,7 @@ const ProtectedRouteElement = ({ element: Component, isLoading, ...props  }) => 
     )
   }
   return (
-    props.loggedIn ? <Component {...props} /> : <Navigate to="https://konkravchenko.nomoreparties.sbs/sign-in" replace/>
+    props.loggedIn ? <Component {...props} /> : <Navigate to="/sign-in" replace/>
 )}
 
 export default ProtectedRouteElement;

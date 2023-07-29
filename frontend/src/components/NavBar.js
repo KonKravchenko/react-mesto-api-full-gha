@@ -11,7 +11,7 @@ function NavBar({ isActive, navBarLog, navBarReg, loggedIn, setLoggedIn, loggedO
   function signOut() {
     setLoggedIn(false)
     loggedOut()
-    history('https://konkravchenko.nomoreparties.sbs/sign-in');
+    history('/sign-in');
     
   }
 

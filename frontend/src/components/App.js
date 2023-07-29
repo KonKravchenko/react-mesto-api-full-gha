@@ -160,7 +160,7 @@ function App() {
       .then((res) => {
         setInfoTooltipData(res)
         setInfoTooltip(true)
-        navigate('https://konkravchenko.nomoreparties.sbs/sign-in', { replace: true });
+        navigate('/sign-in', { replace: true });
       })
       .catch(err => {
         setInfoTooltipData(err)
@@ -178,7 +178,7 @@ function App() {
         handleApi()
         setFormValue({ password: '', email: '' });
         setLoggedIn(true);
-        navigate("https://konkravchenko.nomoreparties.sbs/main", { replace: true })
+        navigate("/main", { replace: true })
        
       })
       .catch((err) => {
@@ -191,7 +191,7 @@ function App() {
   function handleIn() {
     setIsLoading(true)
     handleApi()
-    navigate("https://konkravchenko.nomoreparties.sbs/main", { replace: true })
+    navigate("/main", { replace: true })
     setLoggedIn(true);
   }
 
@@ -204,7 +204,7 @@ function App() {
     auth.logOut(currentUser)
       .then((res) => {
         setLoggedIn(false);
-        navigate('https://konkravchenko.nomoreparties.sbs/sign-in', { replace: true });
+        navigate('/sign-in', { replace: true });
 
       }
       )
@@ -238,22 +238,22 @@ function App() {
 
           <Routes>
 
-            <Route path="/*" element={loggedIn ? <Navigate to="https://konkravchenko.nomoreparties.sbs/main" replace /> : <Navigate to="https://konkravchenko.nomoreparties.sbs/sign-in" replace />} />
-            <Route path="/" element={loggedIn ? <Navigate to="https://konkravchenko.nomoreparties.sbs/main" replace /> : <Navigate to="https://konkravchenko.nomoreparties.sbs/sign-in" replace />} />
+            <Route path="/*" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
+            <Route path="/" element={loggedIn ? <Navigate to="/main" replace /> : <Navigate to="/sign-in" replace />} />
 
-            <Route path="https://konkravchenko.nomoreparties.sbs/sign-up" element={<Register
+            <Route path="/sign-up" element={<Register
               handleRegister={handleRegister}
               navBarLog={handleNavBarLogin}
               formValue={formValue}
               setFormValue={setFormValue}
             />} />
-            <Route path="https://konkravchenko.nomoreparties.sbs/sign-in" element={<Login
+            <Route path="/sign-in" element={<Login
               handleLogin={handleLogin}
               navBarReg={handleNavBarReg}
               formValue={formValue}
               setFormValue={setFormValue} />} />
 
-            <Route path="https://konkravchenko.nomoreparties.sbs/main" element={<ProtectedRouteElement isLoading={isLoading} element={Main}
+            <Route path="/main" element={<ProtectedRouteElement isLoading={isLoading} element={Main}
               onEditAvatar={handleEditAvatarClick}
               onEditProfile={handleEditProfileClick}
               onAddPlace={handleAddPlaceClick}

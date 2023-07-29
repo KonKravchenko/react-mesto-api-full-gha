@@ -98,7 +98,7 @@ class Api {
 // });
 
 export const api = new Api({
-  url: 'https://api.konkravchenko.nomoreparties.sbs',
+  url: 'https://api.konkravchenko.nomoreparties.sbs/',
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Credentials': 'true'
