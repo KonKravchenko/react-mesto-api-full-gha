@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
+const BASE_URL = 'http://api.konkravchenko.nomoreparties.sbs';
 // const BASE_URL = 'http://localhost:3001'
 
 const _checkResponse = (res) => {

@@ -28,6 +28,7 @@ module.exports = (req, res, next) => {
     // устанавливаем заголовок, который разрешает браузеру запросы с этого источника
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', true);
+    return res.end();
   }
 
   const { method } = req; // Сохраняем тип запроса (HTTP-метод) в соответствующую переменную
