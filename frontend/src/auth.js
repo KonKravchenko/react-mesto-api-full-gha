@@ -1,5 +1,4 @@
 export const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
-// export const BASE_URL = 'http://localhost:3000';
 
 const _checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка auth: ${res.status} ${res.statusText}`)
@@ -43,15 +42,3 @@ export const logOut = ({ email }) => {
   })
     .then(res => _checkResponse(res))
 };
-
-// export const checkToken = (token) => {
-//   return fetch(`${BASE_URL}/users/me`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // 'Authorization': `Bearer ${token}`,
-
-//     }
-//   })
-//     .then(res => _checkResponse(res))
-// }
