@@ -61,6 +61,6 @@ app.use(errors()); // обработчик ошибок celebrate
 
 app.use(errorHandler);
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log('Сервер запущен!');
 });
