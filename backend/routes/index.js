@@ -37,7 +37,7 @@ router.post('/logout', logout);
 
 
 
-// router.use(auth);
+router.use(auth);
 router.use('/users', userRoutes);
 router.use('/cards', cardRoutes);
 // router.use('*', (req, res, next) => {
