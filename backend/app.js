@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 app.use(requestLogger);// подключаем логгер запросов
 
-app.use('/', router);
+app.use('https://api.konkravchenko.nomoreparties.sbs/', router);
 
 app.use(errorLogger); // подключаем логгер ошибок
 
