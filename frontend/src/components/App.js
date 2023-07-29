@@ -176,7 +176,7 @@ function App() {
       .then((data) => {
         console.log(data)
         setIsLoading(true)
-        // handleApi()
+        handleApi()
         setFormValue({ password: '', email: '' });
         setLoggedIn(true);
         navigate("/main", { replace: true })
