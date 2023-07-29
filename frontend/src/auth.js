@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs/';
+const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
 
 const _checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка auth: ${res.status} ${res.statusText}`)
