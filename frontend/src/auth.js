@@ -2,6 +2,7 @@ const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
 // const BASE_URL = 'http://localhost:3001'
 
 const _checkResponse = (res) => {
+  console.log(res)
   return res.ok ? res.json() : Promise.reject(`Ошибка auth: ${res.status} ${res.statusText}`)
 }
 
@@ -26,12 +27,15 @@ export const authorize = ({ password, email }) => {
     headers: {
       // "Accept":"application/json",
       "Content-Type": "application/json",
-      // "Access-Control-Allow-Credentials": "true"
+      "Access-Control-Allow-Credentials": "true"
     },
-     
+
     body: JSON.stringify({ password, email })
   })
-    .then(res => _checkResponse(res))
+    .then((res) => {
+      console.log(res)
+      _checkResponse(res)
+    })
 };
 
 export const logOut = ({ email }) => {

@@ -6,8 +6,10 @@ class Api {
 
   _checkResponse(res) {
     if (res.ok) {
+      console.log(res)
       return res.json();
     } else {
+      console.log(res)
       return Promise.reject(`${res.status} ${res.statusText}`);
     }
   }
@@ -95,6 +97,6 @@ export const api = new Api({
   // url: 'http://localhost:3001',
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Credentials': 'true'
+    // 'Access-Control-Allow-Credentials': 'true'
   },
 });
