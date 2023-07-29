@@ -42,22 +42,22 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true)
 
-  // function handleApi() {
-  //   Promise.all([
-  //     api.getProfileData(),
-  //     api.getInitialCards()
-  //   ])
-  //     .then(([userData, cardsData]) => {
-  //       setCurrentUser(userData)
-  //       setCards(cardsData.card)
-  //       setIsLoading(false) //Загрузка в протектед роутер
-  //     })
-  //     .catch((err) => {
-  //       setLoggedIn(false)
-  //       console.log(`Ошибка handleApi: ${err}`)
-  //       setIsLoading(false)
-  //     });
-  // }
+  function handleApi() {
+    Promise.all([
+      api.getProfileData(),
+      api.getInitialCards()
+    ])
+      .then(([userData, cardsData]) => {
+        setCurrentUser(userData)
+        setCards(cardsData.card)
+        setIsLoading(false) //Загрузка в протектед роутер
+      })
+      .catch((err) => {
+        setLoggedIn(false)
+        console.log(`Ошибка handleApi: ${err}`)
+        setIsLoading(false)
+      });
+  }
 
   function handleEditAvatarClick() {
     setEditAvatarPopupOpen(true)
@@ -191,7 +191,7 @@ function App() {
 
   function handleIn() {
     setIsLoading(true)
-    // handleApi()
+    handleApi()
     navigate("/main", { replace: true })
     setLoggedIn(true);
   }
