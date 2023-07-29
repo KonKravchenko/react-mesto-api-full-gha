@@ -9,8 +9,8 @@ const ConflictingRequestError = require('../errors/conflicting-request-err');
 
 const SALT_ROUNDS = 10;
 const { NODE_ENV } = require('../utils/config');
-// const JWT_SECRET = 'somethingverysecret';
-const { JWT_SECRET } = process.env;
+const JWT_SECRET = 'somethingverysecret';
+// const { JWT_SECRET } = process.env;
 
 const logout = (req, res, next) => {
   const { email } = req.body;
