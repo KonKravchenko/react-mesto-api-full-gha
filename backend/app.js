@@ -12,13 +12,13 @@ const { errors } = require('celebrate');
 const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
-const cors = require('cors')
+// const cors = require('cors')
 const router = require('./routes');
-// const cors = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { SERVER_PORT, DB} = require('./utils/config');
 
-app.use(cors());
+app.use(cors);
 
 mongoose.connect(DB);
 // mongoose.connect('mongodb://localhost:27017/mestodb');
