@@ -25,7 +25,7 @@ export const authorize = ({ password, email }) => {
     headers: {
       "Accept":"application/json",
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Credentials': 'true'
+      // 'Access-Control-Allow-Credentials': 'true'
     },
      // теперь куки посылаются вместе с запросом
     body: JSON.stringify({ password, email })

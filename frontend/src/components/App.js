@@ -184,7 +184,7 @@ function App() {
       .catch((err) => {
         setInfoTooltipData(err)
         setInfoTooltip(true)
-        console.log(`Ошибка handleLogin: ${err}`)
+        console.log(`Ошибка handleLogin: ${err}`, err)
       })
   }
 

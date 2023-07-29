@@ -89,13 +89,6 @@ class Api {
   }
 }
 
-// export const api = new Api({
-//   url: 'https://mesto.nomoreparties.co/v1/cohort-64',
-//   headers: {
-//     authorization: 'e3cda1d4-1903-40f4-b79f-2419b5c60311',
-//     'Content-Type': 'application/json'
-//   }
-// });
 
 export const api = new Api({
   url: 'https://api.konkravchenko.nomoreparties.sbs',
@@ -103,5 +96,4 @@ export const api = new Api({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Credentials': 'true'
   },
-  // credentials: 'include', // теперь куки посылаются вместе с запросом
 });
