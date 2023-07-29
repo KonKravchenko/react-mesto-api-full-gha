@@ -20,7 +20,8 @@ const allowedCors = [
   'http://localhost:3000/',
   'http://localhost:3000/sign-in',
   'http://localhost:3000/sign-up',
-  'http://localhost:3000/main'
+  'http://localhost:3000/main',
+  'http://*'
 ];
 
 module.exports = (req, res, next) => {
