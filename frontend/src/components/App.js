@@ -171,7 +171,6 @@ function App() {
 
   // Новый логин
   function handleLogin(formValue, event) {
-    event.preventDefault()
     auth.authorize(formValue)
       .then((data) => {
         console.log(data)
