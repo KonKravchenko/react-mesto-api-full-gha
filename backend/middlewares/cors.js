@@ -1,9 +1,9 @@
 const allowedCors = [
-  'https://konkravchenko.nomoreparties.sbs',
+  // 'https://konkravchenko.nomoreparties.sbs',
   // 'https://konkravchenko.nomoreparties.sbs/',
-  // 'https://konkravchenko.nomoreparties.sbs/sign-in',
-  // 'https://konkravchenko.nomoreparties.sbs/sign-up',
-  // 'https://konkravchenko.nomoreparties.sbs/main',
+  'https://konkravchenko.nomoreparties.sbs/sign-in',
+  'https://konkravchenko.nomoreparties.sbs/sign-up',
+  'https://konkravchenko.nomoreparties.sbs/main',
   // 'http://konkravchenko.nomoreparties.sbs',
   // 'http://konkravchenko.nomoreparties.sbs/',
   // 'http://konkravchenko.nomoreparties.sbs/sign-in',
