@@ -2,9 +2,15 @@
 
 const allowedCors = [
   'https://konkravchenko.nomoreparties.sbs',
+  'https://konkravchenko.nomoreparties.sbs/',
   'https://konkravchenko.nomoreparties.sbs/sign-in',
   'https://konkravchenko.nomoreparties.sbs/sign-up',
   'https://konkravchenko.nomoreparties.sbs/main',
+  'https://localhost:3000',
+  'https://localhost:3000/',
+  'https://localhost:3000/sign-in',
+  'https://localhost:3000/sign-up',
+  'https://localhost:3000/main',
 ];
 
 module.exports = (req, res, next) => {
