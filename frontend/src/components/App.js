@@ -15,7 +15,7 @@ import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import Register from './Register';
 import Login from './Login';
 import ProtectedRouteElement from "./ProtectedRoute";
-import * as auth from '../auth';
+import { auth } from '../auth';
 
 
 function App() {
@@ -179,7 +179,7 @@ function App() {
         setFormValue({ password: '', email: '' });
         setLoggedIn(true);
         navigate("/main", { replace: true })
-       
+
       })
       .catch((err) => {
         setInfoTooltipData(err)

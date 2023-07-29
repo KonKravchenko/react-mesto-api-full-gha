@@ -97,6 +97,6 @@ export const api = new Api({
   // url: 'http://localhost:3001',
   headers: {
     'Content-Type': 'application/json',
-    // 'Access-Control-Allow-Credentials': 'true'
+    'Access-Control-Allow-Credentials': 'true'
   },
 });
