@@ -2,7 +2,9 @@
 
 const allowedCors = [
   'https://konkravchenko.nomoreparties.sbs/*',
-  ];
+  'https://konkravchenko.nomoreparties.sbs/',
+  'https://konkravchenko.nomoreparties.sbs',
+];
 
 module.exports = (req, res, next) => {
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
