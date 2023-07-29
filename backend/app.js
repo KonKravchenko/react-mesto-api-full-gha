@@ -12,6 +12,7 @@ const app = express();
 const router = require('./routes');
 
 const allowedCors = [
+  'https://konkravchenko.nomoreparties.sbs',
   'https://localhost:3000/',
   'http://localhost:3000',
   'http://localhost:3000/main',
@@ -45,7 +46,7 @@ app.use((req, res, next) => {
     return res.end();
   }
 
-  next();
+  return next();
 });
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
@@ -60,6 +61,6 @@ app.use(errors()); // обработчик ошибок celebrate
 
 app.use(errorHandler);
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log('Сервер запущен!');
 });
