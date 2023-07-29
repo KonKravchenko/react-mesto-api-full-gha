@@ -10,7 +10,7 @@ export const register = ({ password, email }) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
-      "Accept":"application/json",
+      // "Accept":"application/json",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ password, email })
@@ -24,9 +24,9 @@ export const authorize = ({ password, email }) => {
     method: 'POST',
     credentials: 'include',// теперь куки посылаются вместе с запросом
     headers: {
-      "Accept":"application/json",
+      // "Accept":"application/json",
       "Content-Type": "application/json",
-      "Access-Control-Allow-Credentials": "true"
+      // "Access-Control-Allow-Credentials": "true"
     },
      
     body: JSON.stringify({ password, email })

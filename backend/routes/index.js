@@ -40,7 +40,7 @@ router.post('/logout', logout);
 router.use(auth);
 router.use('/users', userRoutes);
 router.use('/cards', cardRoutes);
-router.use('*', (req, res, next) => {
+router.use('/*', (req, res, next) => {
   throw new NotFoundError('Неверный путь');
 });
 
