@@ -95,7 +95,6 @@ function App() {
           console.log(`Ошибка: ${err}`)
         });
     } else {
-
       api.deleteLike(card._id)
         .then((newCard) => {
 
@@ -199,7 +198,6 @@ function App() {
       .then((res) => {
         setLoggedIn(false);
         navigate('/sign-in', { replace: true });
-
       }
       )
       .catch(err => {
