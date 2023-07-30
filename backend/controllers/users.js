@@ -6,6 +6,7 @@ const User = require('../models/user');
 const UnauthorizedError = require('../errors/unauthorized-err');
 const NotFoundError = require('../errors/not-found-err');
 const ConflictingRequestError = require('../errors/conflicting-request-err');
+const BadRequestError = require('../errors/bad-request-err');
 
 const SALT_ROUNDS = 10;
 const { SECRET_STRING } = require('../utils/config');
@@ -95,12 +96,21 @@ const createUser = (req, res, next) => {
             name, about, avatar, email,
           });
       })
+      // .catch((err) => {
+      //   if (err.code === 11000) {
+      //     throw new ConflictingRequestError('Пользователь с таким Email уже зарегестрирован');
+      //   }
+      // })
+      // .catch(next);
       .catch((err) => {
-        if (err.code === 11000) {
-          throw new ConflictingRequestError('Пользователь с таким Email уже зарегестрирован');
+        if (err.name === 'ValidationError') {
+          next(new BadRequestError('Некорректые данные при создании карточки'));
+        } else if (err.code === 11000) {
+          next(new ConflictingRequestError('Пользователь с таким Email уже зарегестрирован'));
+        } else {
+          next(err);
         }
-      })
-      .catch(next);
+      });
   });
 };
 
@@ -123,10 +133,12 @@ const getUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.message === 'NotValidId') {
-        throw new NotFoundError('Пользователь не найден');
+        next(new NotFoundError('Пользователь не найден'));
+      } else {
+        next(err);
       }
-    })
-    .catch(next);
+    });
+  // .catch(next);
 };
 
 const getAuthUser = (req, res, next) => {
