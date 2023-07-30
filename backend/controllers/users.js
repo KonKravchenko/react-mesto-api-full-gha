@@ -8,16 +8,16 @@ const NotFoundError = require('../errors/not-found-err');
 const ConflictingRequestError = require('../errors/conflicting-request-err');
 
 const SALT_ROUNDS = 10;
-const { NODE_ENV } = require('../utils/config');
+const { NODE_ENV, SECRET_STRING } = require('../utils/config');
 
-const JWT_SECRET = 'somethingverysecret';
+// const JWT_SECRET = 'somethingverysecret';
 // const { JWT_SECRET } = process.env;
 
 const logout = (req, res, next) => {
   const { email } = req.body;
   User.findOne({ email })
     .then((user) => {
-      const token = jwt.sign({ id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
+      const token = jwt.sign({ id: user._id }, NODE_ENV === 'production' ? SECRET_STRING : 'dev-secret');
       res
         .cookie('jwt', token, {
           maxAge: 0,
@@ -41,7 +41,7 @@ const login = (req, res, next) => {
         if (!isValidPassword) {
           throw new UnauthorizedError('Неверный имя пользователя или пароль');
         } else {
-          const token = jwt.sign({ id: user._id }, JWT_SECRET);
+          const token = jwt.sign({ id: user._id }, SECRET_STRING);
           res
             .cookie('jwt', token, {
               maxAge: 3600000 * 24 * 7,
