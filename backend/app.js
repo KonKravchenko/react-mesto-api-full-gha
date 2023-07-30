@@ -12,7 +12,7 @@ const { errors } = require('celebrate');
 const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
-// const cors = require('cors')
+
 const router = require('./routes');
 const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -22,7 +22,7 @@ app.use(cors);
 
 
 mongoose.connect(DB);
-// mongoose.connect('mongodb://localhost:27017/mestodb');
+
 
 app.use(bodyParser.json());
 app.use(cookieParser());

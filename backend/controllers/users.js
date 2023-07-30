@@ -11,27 +11,8 @@ const BadRequestError = require('../errors/bad-request-err');
 const SALT_ROUNDS = 10;
 const { SECRET_STRING } = require('../utils/config');
 
-// const JWT_SECRET = 'somethingverysecret';
-// const { JWT_SECRET } = process.env;
-// NODE_ENV === 'production' ? SECRET_STRING : 'dev-secret'
 const logout = (req, res, next) => {
   res.clearCookie('jwt').send({ message: 'Выход' });
-  // const { email } = req.body;
-  // User.findOne({ email })
-  //   .then((user) => {
-  //     const token = jwt.sign({ id: user._id }, SECRET_STRING);
-  //     res
-  //       .cookie('jwt', token, {
-  //         maxAge: 0,
-  //         httpOnly: true,
-  //         sameSite: true,
-  //       })
-  //       .send({ id: user._id });
-  //   })
-  //   .catch((error) => {
-  //     throw new UnauthorizedError('Неверный имя пользователя или пароль');
-  //   })
-  //   .catch(next);
 };
 
 const login = (req, res, next) => {
@@ -59,25 +40,6 @@ const login = (req, res, next) => {
         }).catch(next);
     })
     .catch(next);
-  //   bcrypt.compare(password, user.password, (err, isValidPassword) => {
-  //     if (!isValidPassword) {
-  //       throw new UnauthorizedError('Неверный имя пользователя или пароль');
-  //     } else {
-  //       const token = jwt.sign({ id: user._id }, SECRET_STRING);
-  //       res
-  //         .cookie('jwt', token, {
-  //           maxAge: 3600000 * 24 * 7,
-  //           httpOnly: true,
-  //           sameSite: true,
-  //         })
-  //         .send({ id: user._id });
-  //     }
-  //   });
-  // })
-  // .catch((error) => {
-  //   throw new UnauthorizedError('Неверный имя пользователя или пароль');
-  // })
-  // .catch(next);
 };
 
 const createUser = (req, res, next) => {
@@ -96,12 +58,6 @@ const createUser = (req, res, next) => {
             name, about, avatar, email,
           });
       })
-      // .catch((err) => {
-      //   if (err.code === 11000) {
-      //     throw new ConflictingRequestError('Пользователь с таким Email уже зарегестрирован');
-      //   }
-      // })
-      // .catch(next);
       .catch((err) => {
         if (err.name === 'ValidationError') {
           next(new BadRequestError('Некорректые данные при создании карточки'));
@@ -138,27 +94,12 @@ const getUser = (req, res, next) => {
         next(err);
       }
     });
-  // .catch(next);
 };
-
-// const getAuthUser = (req, res, next) => {
-//   const { id } = req.user;
-//   User.findById(id)
-//     .then((user) => {
-//       User.findOne(user)
-//         .then((data) => {
-//           res.status(200).send(data);
-//         });
-//     })
-//     .catch(next);
-// };
 
 const getAuthUser = (req, res, next) => {
   const { id } = req.user;
-  console.log(req);
   User.findById(id)
     .then((user) => {
-      console.log(user);
       res.status(200).send(user);
     })
     .catch(next);
@@ -177,7 +118,6 @@ const changeProfileData = (req, res, next) => {
         .status(200)
         .send(user);
     })
-    // .catch(next);
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Некорректые данные при создании карточки'));

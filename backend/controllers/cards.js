@@ -12,7 +12,6 @@ module.exports.createCard = (req, res, next) => {
         .status(201)
         .send(card);
     })
-    // .catch(next);
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Некорректые данные при создании карточки'));
@@ -61,12 +60,6 @@ module.exports.likeCard = (req, res, next) => {
   )
     .orFail(new Error('NotValidId'))
     .then((card) => res.status(200).send(card))
-    // .catch((err) => {
-    //   if (err.message === 'NotValidId') {
-    //     throw new NotFoundError('Карточка не найдена');
-    //   }
-    // })
-    // .catch(next);
     .catch((err) => {
       if (err.message === 'NotValidId') {
         next(new NotFoundError('Карточка не найдена'));
@@ -84,12 +77,6 @@ module.exports.dislikeCard = (req, res, next) => {
   )
     .orFail(new Error('NotValidId'))
     .then((card) => res.status(200).send(card))
-    // .catch((err) => {
-    //   if (err.message === 'NotValidId') {
-    //     throw new NotFoundError('Карточка не найдена');
-    //   }
-    // })
-    // .catch(next);
     .catch((err) => {
       if (err.message === 'NotValidId') {
         next(new NotFoundError('Карточка не найдена'));
