@@ -140,7 +140,6 @@ function App() {
   }
 
   function handleAddPlaceSubmit(data) {
-    console.log('handleAddPlace', data)
     api.setNewCard(data)
       .then((data) => {
         setCards([data, ...cards]);
@@ -169,7 +168,6 @@ function App() {
   function handleLogin(formValue, event) {
     auth.authorize(formValue)
       .then((data) => {
-        console.log(data)
         setIsLoading(true)
         handleApi()
         setFormValue({ password: '', email: '' });

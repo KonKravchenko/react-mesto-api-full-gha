@@ -4,7 +4,6 @@ const { celebrate, Joi } = require('celebrate');
 const userRoutes = require('./users');
 const cardRoutes = require('./cards');
 const NotFoundError = require('../errors/not-found-err');
-const CrashTestError = require('../errors/crash-test');
 const auth = require('../middlewares/auth');
 const { linkValid } = require('../utils/constants');
 
@@ -14,7 +13,7 @@ const {
 
 router.get('/crash-test', () => {
   setTimeout(() => {
-    throw new CrashTestError('Сервер сейчас упадёт');
+    throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
 
