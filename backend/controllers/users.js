@@ -38,25 +38,45 @@ const login = (req, res, next) => {
 
   User.findOne({ email }).select('+password')
     .then((user) => {
-      bcrypt.compare(password, user.password, (err, isValidPassword) => {
-        if (!isValidPassword) {
-          throw new UnauthorizedError('Неверный имя пользователя или пароль');
-        } else {
-          const token = jwt.sign({ id: user._id }, SECRET_STRING);
-          res
-            .cookie('jwt', token, {
-              maxAge: 3600000 * 24 * 7,
-              httpOnly: true,
-              sameSite: true,
-            })
-            .send({ id: user._id });
-        }
-      });
-    })
-    .catch((error) => {
-      throw new UnauthorizedError('Неверный имя пользователя или пароль');
+      if (!user) {
+        throw new UnauthorizedError('Неверный имя пользователя или пароль');
+      }
+      bcrypt.compare(password, user.password)
+        .then((isValidPassword) => {
+          if (!isValidPassword) {
+            throw new UnauthorizedError('Неверный имя пользователя или пароль');
+          } else {
+            const token = jwt.sign({ id: user._id }, SECRET_STRING);
+            res
+              .cookie('jwt', token, {
+                maxAge: 3600000 * 24 * 7,
+                httpOnly: true,
+                sameSite: true,
+              })
+              .send({ id: user._id });
+          }
+        }).catch(next);
     })
     .catch(next);
+  //   bcrypt.compare(password, user.password, (err, isValidPassword) => {
+  //     if (!isValidPassword) {
+  //       throw new UnauthorizedError('Неверный имя пользователя или пароль');
+  //     } else {
+  //       const token = jwt.sign({ id: user._id }, SECRET_STRING);
+  //       res
+  //         .cookie('jwt', token, {
+  //           maxAge: 3600000 * 24 * 7,
+  //           httpOnly: true,
+  //           sameSite: true,
+  //         })
+  //         .send({ id: user._id });
+  //     }
+  //   });
+  // })
+  // .catch((error) => {
+  //   throw new UnauthorizedError('Неверный имя пользователя или пароль');
+  // })
+  // .catch(next);
 };
 
 const createUser = (req, res, next) => {
