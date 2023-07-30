@@ -8,16 +8,16 @@ const NotFoundError = require('../errors/not-found-err');
 const ConflictingRequestError = require('../errors/conflicting-request-err');
 
 const SALT_ROUNDS = 10;
-const { NODE_ENV, SECRET_STRING } = require('../utils/config');
+const { SECRET_STRING } = require('../utils/config');
 
 // const JWT_SECRET = 'somethingverysecret';
 // const { JWT_SECRET } = process.env;
-
+// NODE_ENV === 'production' ? SECRET_STRING : 'dev-secret'
 const logout = (req, res, next) => {
   const { email } = req.body;
   User.findOne({ email })
     .then((user) => {
-      const token = jwt.sign({ id: user._id }, NODE_ENV === 'production' ? SECRET_STRING : 'dev-secret');
+      const token = jwt.sign({ id: user._id }, SECRET_STRING);
       res
         .cookie('jwt', token, {
           maxAge: 0,
