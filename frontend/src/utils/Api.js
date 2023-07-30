@@ -5,13 +5,7 @@ class Api {
   }
 
   _checkResponse(res) {
-    if (res.ok) {
-      console.log(res)
-      return res.json();
-    } else {
-      console.log(res)
-      return Promise.reject(`${res.status} ${res.statusText}`);
-    }
+    return res.ok ? res.json() : Promise.reject(`Ошибка auth: ${res.status} ${res.statusText}`)
   }
 
   getProfileData() {

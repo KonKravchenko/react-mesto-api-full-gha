@@ -54,7 +54,6 @@ function App() {
       })
       .catch((err) => {
         setLoggedIn(false)
-        console.log(`Ошибка handleApi: ${err}`)
         setIsLoading(false)
       });
   }
@@ -88,20 +87,18 @@ function App() {
     const isLiked = card.likes.some(item => item === currentUser._id);
 
     if (!isLiked) {
-      console.log('app addLike', card._id)
       api.addLike(card._id)
         .then((newCard) => {
-          console.log('app addLike newCard', card._id)
           setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`)
         });
     } else {
-      console.log('app deleteLike', card._id)
+
       api.deleteLike(card._id)
         .then((newCard) => {
-          console.log('app deleteLike', newCard)
+
           setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
         })
         .catch((err) => {
@@ -113,7 +110,6 @@ function App() {
   function handleCardDelete(card) {
     api.deleteCard(card._id)
       .then((newCard) => {
-        console.log(newCard)
         setCards(cards.filter(function item(c) { if (c._id !== card._id) { return c } }))
       })
       .catch((err) => {

@@ -1,6 +1,3 @@
-// const BASE_URL = 'https://api.konkravchenko.nomoreparties.sbs';
-// const BASE_URL = 'http://localhost:3001'
-
 class Auth {
   constructor(options) {
     this.url = options.url;
