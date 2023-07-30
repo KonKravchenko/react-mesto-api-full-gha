@@ -14,22 +14,23 @@ const { SECRET_STRING } = require('../utils/config');
 // const { JWT_SECRET } = process.env;
 // NODE_ENV === 'production' ? SECRET_STRING : 'dev-secret'
 const logout = (req, res, next) => {
-  const { email } = req.body;
-  User.findOne({ email })
-    .then((user) => {
-      const token = jwt.sign({ id: user._id }, SECRET_STRING);
-      res
-        .cookie('jwt', token, {
-          maxAge: 0,
-          httpOnly: true,
-          sameSite: true,
-        })
-        .send({ id: user._id });
-    })
-    .catch((error) => {
-      throw new UnauthorizedError('Неверный имя пользователя или пароль');
-    })
-    .catch(next);
+  res.clearCookie('jwt').send({ message: 'Выход' });
+  // const { email } = req.body;
+  // User.findOne({ email })
+  //   .then((user) => {
+  //     const token = jwt.sign({ id: user._id }, SECRET_STRING);
+  //     res
+  //       .cookie('jwt', token, {
+  //         maxAge: 0,
+  //         httpOnly: true,
+  //         sameSite: true,
+  //       })
+  //       .send({ id: user._id });
+  //   })
+  //   .catch((error) => {
+  //     throw new UnauthorizedError('Неверный имя пользователя или пароль');
+  //   })
+  //   .catch(next);
 };
 
 const login = (req, res, next) => {
