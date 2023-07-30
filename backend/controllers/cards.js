@@ -1,6 +1,7 @@
 const Card = require('../models/card');
 const ForbidenError = require('../errors/forbiden-err');
 const NotFoundError = require('../errors/not-found-err');
+const BadRequestError = require('../errors/bad-request-err');
 
 module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
@@ -11,7 +12,14 @@ module.exports.createCard = (req, res, next) => {
         .status(201)
         .send(card);
     })
-    .catch(next);
+    // .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        next(new BadRequestError('Некорректые данные при создании карточки'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.getCards = (req, res, next) => {
@@ -53,12 +61,19 @@ module.exports.likeCard = (req, res, next) => {
   )
     .orFail(new Error('NotValidId'))
     .then((card) => res.status(200).send(card))
+    // .catch((err) => {
+    //   if (err.message === 'NotValidId') {
+    //     throw new NotFoundError('Карточка не найдена');
+    //   }
+    // })
+    // .catch(next);
     .catch((err) => {
       if (err.message === 'NotValidId') {
-        throw new NotFoundError('Карточка не найдена');
+        next(new NotFoundError('Карточка не найдена'));
+      } else {
+        next(err);
       }
-    })
-    .catch(next);
+    });
 };
 
 module.exports.dislikeCard = (req, res, next) => {
@@ -69,10 +84,17 @@ module.exports.dislikeCard = (req, res, next) => {
   )
     .orFail(new Error('NotValidId'))
     .then((card) => res.status(200).send(card))
+    // .catch((err) => {
+    //   if (err.message === 'NotValidId') {
+    //     throw new NotFoundError('Карточка не найдена');
+    //   }
+    // })
+    // .catch(next);
     .catch((err) => {
       if (err.message === 'NotValidId') {
-        throw new NotFoundError('Карточка не найдена');
+        next(new NotFoundError('Карточка не найдена'));
+      } else {
+        next(err);
       }
-    })
-    .catch(next);
+    });
 };
