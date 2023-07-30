@@ -141,28 +141,28 @@ const getUser = (req, res, next) => {
   // .catch(next);
 };
 
-const getAuthUser = (req, res, next) => {
-  const { id } = req.user;
-  User.findById(id)
-    .then((user) => {
-      User.findOne(user)
-        .then((data) => {
-          res.status(200).send(data);
-        });
-    })
-    .catch(next);
-};
-
 // const getAuthUser = (req, res, next) => {
 //   const { id } = req.user;
-//   console.log(req);
 //   User.findById(id)
 //     .then((user) => {
-//       console.log(user);
-//       res.status(200).send(user);
+//       User.findOne(user)
+//         .then((data) => {
+//           res.status(200).send(data);
+//         });
 //     })
 //     .catch(next);
 // };
+
+const getAuthUser = (req, res, next) => {
+  const { id } = req.user;
+  console.log(req);
+  User.findById(id)
+    .then((user) => {
+      console.log(user);
+      res.status(200).send(user);
+    })
+    .catch(next);
+};
 
 const changeProfileData = (req, res, next) => {
   User.findByIdAndUpdate(
@@ -177,7 +177,14 @@ const changeProfileData = (req, res, next) => {
         .status(200)
         .send(user);
     })
-    .catch(next);
+    // .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        next(new BadRequestError('Некорректые данные при создании карточки'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 const changeProfileNameAbout = (req, res) => {
